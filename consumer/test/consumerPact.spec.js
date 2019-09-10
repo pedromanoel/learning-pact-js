@@ -53,10 +53,11 @@ describe('Pact with Our Provider', () => {
         })
       })
 
-      it('can process the JSON payload from the provider', () => {
+      it('can process the JSON payload from the provider', done => {
         const response = fetchProviderData(submissionDate)
 
-        return expect(response).to.eventually.have.property('value', 0.1)
+			  expect(response).to.eventually.have.property('value', 0.1)
+			  expect(response).to.eventually.have.property('date', date).notify(done)
       })
 
       it('should validate the interactions and create a contract', () => {

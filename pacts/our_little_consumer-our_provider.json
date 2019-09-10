@@ -11,7 +11,7 @@
       "request": {
         "method": "GET",
         "path": "/provider",
-        "query": "validDate=2019-09-10T03%3A22%3A15.656Z"
+        "query": "validDate=2019-09-10T03%3A31%3A27.883Z"
       },
       "response": {
         "status": 200,
