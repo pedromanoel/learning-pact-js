@@ -4,7 +4,9 @@
   "description": "Testing pact in a javascript application",
   "main": "index.js",
   "scripts": {
-    "test": "mocha consumer/test/consumer.spec.js"
+		"lint": "standard",
+		"test:consumer": "mocha --timeout 10000 consumer/test/consumer.spec.js",
+    "test:pact:consumer": "mocha --timeout 10000 consumer/test/consumerPact.spec.js"
   },
   "author": "",
   "license": "ISC",
