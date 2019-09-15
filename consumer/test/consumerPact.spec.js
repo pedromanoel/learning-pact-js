@@ -18,14 +18,14 @@ const provider = new Pact({
   log: path.resolve(process.cwd(), 'logs', 'pact.log'),
   dir: path.resolve(process.cwd(), 'pacts'),
   logLevel: LOG_LEVEL,
-  spec: 2,
+  spec: 2
 })
 const date = '2013-08-16T15:31:20+10:00'
 const submissionDate = new Date().toISOString()
 const expectedBody = {
   test: 'NO',
   date: date,
-  count: 1000,
+  count: 1000
 }
 
 describe('Pact with Our Provider', () => {
@@ -39,16 +39,16 @@ describe('Pact with Our Provider', () => {
               method: 'GET',
               path: '/provider',
               query: {
-                validDate: submissionDate,
-              },
+                validDate: submissionDate
+              }
             },
             willRespondWith: {
               status: 200,
               headers: {
-                'Content-Type': 'application/json; charset=utf-8',
+                'Content-Type': 'application/json; charset=utf-8'
               },
-              body: expectedBody,
-            },
+              body: expectedBody
+            }
           })
         })
       })
@@ -56,8 +56,8 @@ describe('Pact with Our Provider', () => {
       it('can process the JSON payload from the provider', done => {
         const response = fetchProviderData(submissionDate)
 
-			  expect(response).to.eventually.have.property('value', 0.1)
-			  expect(response).to.eventually.have.property('date', date).notify(done)
+        expect(response).to.eventually.have.property('value', 0.1)
+        expect(response).to.eventually.have.property('date', date).notify(done)
       })
 
       it('should validate the interactions and create a contract', () => {

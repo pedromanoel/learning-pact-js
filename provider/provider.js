@@ -18,7 +18,7 @@ server.get('/provider', (req, res) => {
   res.json({
     test: 'NO',
     validDate: new Date().toISOString(),
-    count: 100,
+    count: 100
   })
 })
 

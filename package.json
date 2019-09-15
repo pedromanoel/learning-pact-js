@@ -4,9 +4,15 @@
   "description": "Testing pact in a javascript application",
   "main": "index.js",
   "scripts": {
-		"lint": "standard",
-		"test:consumer": "mocha --timeout 10000 consumer/test/consumer.spec.js",
+    "lint": "standard",
+    "lint-fix": "standard --fix",
+    "test:consumer": "mocha --timeout 10000 consumer/test/consumer.spec.js",
     "test:pact:consumer": "mocha --timeout 10000 consumer/test/consumerPact.spec.js"
+  },
+  "standard": {
+    "env": {
+      "mocha": true
+    }
   },
   "author": "",
   "license": "ISC",
@@ -24,6 +30,7 @@
     "cli-color": "^1.4.0",
     "concurrently": "^4.1.2",
     "mocha": "^6.2.0",
-    "nock": "^11.3.3"
+    "nock": "^11.3.3",
+    "standard": "^14.3.0"
   }
 }
